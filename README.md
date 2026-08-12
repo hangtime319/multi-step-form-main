@@ -1,16 +1,46 @@
-# React + Vite
+# Multi-step Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project: a responsive multi-step form built with React and Vite.
 
-Currently, two official plugins are available:
+## Demo
+- Live site: https://hangtime319.github.io/multi-step-form-main/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- Multi-step form with validation for user information
+- Plan selection with monthly/yearly billing toggle
+- Add-ons selection with dynamic pricing
+- Summary and thank-you screen
+- Fully responsive layout with sidebar step indicator
 
-## React Compiler
+## Technologies
+- React (v18/19 compatible)
+- Vite (build tool)
+- TailwindCSS for styling
+- Playwright for end-to-end tests
+- ESLint for linting
+- GitHub Actions for CI and deploy to GitHub Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project structure
+- `src/` — source React components and pages
+- `public/` — static assets copied to build
+- `dist/` — production build output
+- `tests/` — Playwright E2E tests
 
-## Expanding the ESLint configuration
+## Build & Deploy
+```bash
+npm install
+npm run build
+# publish dist to gh-pages (example):
+# git checkout --orphan gh-pages
+# git --work-tree dist add --all
+# git --work-tree dist commit -m "chore(gh-pages): publish site"
+# git push origin HEAD:gh-pages --force
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Notes
+- Images and background assets use relative paths to ensure correct loading on GitHub Pages (`vite.config.js` uses `base: './'`).
+- If images don't appear after deploy, try clearing browser cache or force-pushing `dist` again.
+
+---
+
+If you want, I can add contribution instructions or license info.

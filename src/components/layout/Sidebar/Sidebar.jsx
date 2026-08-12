@@ -9,7 +9,7 @@ const steps = [
 
 const Sidebar = ({ currentStep }) => {
   return (
-    <aside className="flex items-start justify-center gap-4 bg-[url(./images/bg-sidebar-mobile.svg)] bg-no-repeat bg-cover w-full h-40 pt-10 md:justify-start md:flex-col md:rounded-lg md:w-1/3 md:min-h-125 md:bg-[url(./images/bg-sidebar-desktop.svg)] md:bg-center md:gap-6 md:px-6 md:pt-8">
+    <aside className="flex items-start justify-center gap-4 bg-[url(../images/bg-sidebar-mobile.svg)] bg-no-repeat bg-cover w-full h-40 pt-10 md:justify-start md:flex-col md:rounded-lg md:w-1/3 md:min-h-125 md:bg-[url(../images/bg-sidebar-desktop.svg)] md:bg-center md:gap-6 md:px-6 md:pt-8">
       {steps.map((step) => {
         const isActive = step.number === currentStep;
         return <StepIndicator key={step.number} number={step.number} label={step.label} title={step.title} isActive={isActive} />;

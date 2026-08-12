@@ -1,0 +1,33 @@
+name: E2E Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Build
+        run: npm run build
+
+      - name: Start preview server
+        run: npx vite preview --port 4173 & sleep 5
+
+      - name: Run Playwright tests
+        run: npx playwright test --reporter=list
+        env:
+          CI: true
